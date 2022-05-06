@@ -12,10 +12,13 @@ namespace Servicios.api.Libreria.Core.Entities
         [BsonId]
         [BsonRepresentation (BsonType.ObjectId)]
         public string Id { get; set; }
+
         [BsonElement("nombre")]  //Elemento o propiedad de un Bson
         public string Nombre { get; set; }
+
         [BsonElement("apellido")]
         public string Apellido { get; set; }
+
         [BsonElement("gradoAcademico")]
         public string GradoAcademico { get; set; }
 

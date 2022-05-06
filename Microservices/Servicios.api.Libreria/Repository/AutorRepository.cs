@@ -1,4 +1,5 @@
 ﻿
+
 using MongoDB.Driver;
 using Servicios.api.Libreria.Core.ContextMongoDB;
 using Servicios.api.Libreria.Core.Entities;
@@ -20,7 +21,19 @@ namespace Servicios.api.Libreria.Repository
         //Metodo para poder obtener una lista de autores
         public async Task<IEnumerable<Autor>> GetAutores()
         {
-          return await _autorContext.Autores.Find(p=> true).ToListAsync();   //Retornamos la Lista de autores
+            IEnumerable<Autor> resp = null;
+
+            try
+            {
+                resp= await _autorContext.Autores.Find(p => true).ToListAsync();   //Retornamos la Lista de autores
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+            return resp;
+         
         }
     }
 }

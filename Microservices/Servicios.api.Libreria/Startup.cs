@@ -33,7 +33,7 @@ namespace Servicios.api.Libreria
                   options=>
                   {
                       options.ConnectionString = Configuration.GetSection("MongoDB:ConnectionString").Value;
-                      options.ConnectionString = Configuration.GetSection("MongoDB:Database").Value;
+                      options.DataBase = Configuration.GetSection("MongoDB:Database").Value;
 
                   }
                 );
@@ -59,23 +59,23 @@ namespace Servicios.api.Libreria
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplication2 v1"));
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+           
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+          
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseSwagger();
-            
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
         }
     }
 }
