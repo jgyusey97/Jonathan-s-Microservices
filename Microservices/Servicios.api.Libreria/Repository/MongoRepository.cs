@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Servicios.api.Libreria.Core;
@@ -21,13 +24,16 @@ namespace Servicios.api.Libreria.Repository
         //Metodo que me va a traer el nombre de la coleccion usando el document type
         private protected string GetCollectionName(Type documentype)
         {
-            return ((BsonCollectionAtribute)documentype.GetCustomAttributes(typeof(BsonCollectionAtribute), true).FirstOrDefault()).CollectionName;
+            return ((BsonCollectionAttribute)documentype.GetCustomAttributes(typeof(BsonCollectionAttribute), true).FirstOrDefault()).CollectionName;
 
         }
 
-        public IQueryable<TDocument> GetAll()
+
+        //Me retorna la coleccion
+
+        public   async Task<IEnumerable<TDocument>> GetAll()
         {
-            return _collection.AsQueryable();
+            return await _collection.Find(p => true).ToListAsync();
         }
     }
 }

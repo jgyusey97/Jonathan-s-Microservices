@@ -1,19 +1,24 @@
 ﻿<Properties StartupConfiguration="{956666E7-40B5-4605-8DF1-905C6132FC18}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs">
     <Files>
-      <File FileName="Servicios.api.Libreria/Program.cs" Line="1" Column="1" />
-      <File FileName="Servicios.api.Libreria/appsettings.json" Line="14" Column="6" />
-      <File FileName="Servicios.api.Libreria/Startup.cs" Line="48" Column="35" />
+      <File FileName="Servicios.api.Libreria/Program.cs" Line="16" Column="1" />
+      <File FileName="Servicios.api.Libreria/appsettings.json" Line="8" Column="1" />
+      <File FileName="Servicios.api.Libreria/Startup.cs" Line="49" Column="87" />
       <File FileName="Servicios.api.Libreria/Properties/launchSettings.json" Line="20" Column="35" />
-      <File FileName="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" Line="12" Column="32" />
-      <File FileName="Servicios.api.Libreria/Core/MongoSettings.cs" Line="9" Column="19" />
+      <File FileName="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" Line="31" Column="27" />
+      <File FileName="Servicios.api.Libreria/Core/MongoSettings.cs" Line="9" Column="20" />
       <File FileName="Servicios.api.Libreria/Repository/AutorRepository.cs" Line="31" Column="14" />
       <File FileName="Servicios.api.Libreria/Repository/IAutorRepository.cs" Line="10" Column="121" />
-      <File FileName="Servicios.api.Libreria/Core/Entities/Autor.cs" Line="21" Column="34" />
-      <File FileName="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" Line="29" Column="66" />
+      <File FileName="Servicios.api.Libreria/Core/Entities/Autor.cs" Line="8" Column="23" />
+      <File FileName="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" Line="24" Column="1" />
       <File FileName="Servicios.api.Libreria/Core/ContextMongoDB/IAutorContext.cs" Line="1" Column="1" />
       <File FileName="Servicios.api.Libreria/Pages/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Servicios.api.Libreria/Core/Entities/IDocument.cs" Line="7" Column="28" />
+      <File FileName="Servicios.api.Libreria/Core/Entities/Document.cs" Line="4" Column="1" />
+      <File FileName="Servicios.api.Libreria/Core/Entities/BsonCollectionAtribute.cs" Line="9" Column="42" />
+      <File FileName="Servicios.api.Libreria/Core/Entities/AutorEntity.cs" Line="14" Column="37" />
+      <File FileName="Servicios.api.Libreria/Repository/IMongoRepository.cs" Line="19" Column="1" />
+      <File FileName="Servicios.api.Libreria/Repository/MongoRepository.cs" Line="32" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,10 +29,11 @@
                 <Node name="FrameworkReferences" expanded="True" />
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="LibreriaServicioController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Core" expanded="True">
+                <Node name="ContextMongoDB" expanded="True">
+                  <Node name="AutorContext.cs" selected="True" />
+                </Node>
                 <Node name="Entities" expanded="True" />
               </Node>
               <Node name="Properties" expanded="True" />
@@ -42,15 +48,15 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Servicios.api.Libreria PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" relfile="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" line="17" column="1" />
-      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" relfile="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" line="25" column="1" />
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" relfile="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" line="24" column="1" />
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" relfile="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" line="23" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/MongoRepository.cs" relfile="Servicios.api.Libreria/Repository/MongoRepository.cs" line="14" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

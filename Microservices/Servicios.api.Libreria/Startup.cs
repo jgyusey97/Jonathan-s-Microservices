@@ -46,6 +46,9 @@ namespace Servicios.api.Libreria
 
             services.AddTransient<IAutorContext, AutorContext>();  // AddTransiet es para que cree instancias de cada metodo individual que se va ejecutando (Cada vez que un cliente crea un api , se crea por cada transaccion)
             services.AddTransient<IAutorRepository, AutorRepository>();  //Agregamos nuestro repositorio de la clase autor (Realizamos la inyeccion dependencia) Se crea instancia cada vez que un cliente llame un api
+            services.AddScoped(typeof(IMongoRepository<>), typeof(MongoRepository<>));//Trabaja cada vez que un cliente haga un request a un controler, cuando ese request termine va ha destruirlo (Inicia en el request y termina en el response)
+
+
 
             
 

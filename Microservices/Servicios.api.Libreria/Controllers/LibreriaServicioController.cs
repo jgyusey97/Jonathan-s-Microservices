@@ -14,18 +14,37 @@ namespace Servicios.api.Libreria.Controllers
     public class LibreriaServicioController : ControllerBase
     {
         private readonly IAutorRepository _autorRepository;
-        public LibreriaServicioController(IAutorRepository autorRepository)  //Constructor
+
+        private readonly IMongoRepository<AutorEntity> _autorGenericoRepository;
+
+
+        public LibreriaServicioController(IAutorRepository autorRepository, MongoRepository<AutorEntity> autorGenericoRepository ) //Constructor
         {
 
             _autorRepository = autorRepository;  //Inyeccion
 
+            _autorGenericoRepository = autorGenericoRepository;
+
+
         }
-        //Mètodo para poder consultar los autores
+        //Metodo para poder consultar los autores
         [HttpGet ("autores")]
         public async Task<ActionResult<IEnumerable<Autor>>> GetAutores()
         {
             var autores = await _autorRepository.GetAutores();
             return Ok(autores);
         }
+
+     
+        [HttpGet("autorGenerico")]
+        public async Task<ActionResult<IEnumerable<AutorEntity>>> GetAutorGenerico()
+        {
+
+            var autores = await _autorGenericoRepository.GetAll();
+
+            return Ok(autores);
+        }
+
+
     }
 }
