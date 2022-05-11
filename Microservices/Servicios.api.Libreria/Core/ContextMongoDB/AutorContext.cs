@@ -16,7 +16,7 @@ namespace Servicios.api.Libreria.Core.ContextMongoDB
 
         public AutorContext(IOptions<MongoSettings> options)
         {
-
+            
             //Se inicializa el acceso a la base de MongoDB
             var client = new MongoClient(options.Value.ConnectionString);
             _db = client.GetDatabase(options.Value.DataBase);  

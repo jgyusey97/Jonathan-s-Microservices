@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Proyectos\\Jonathan-s-Microservices\\Microservices\\Servicios.api.Libreria\\Servicios.api.Libreria.csproj": {}
+    "/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Servicios.api.Libreria.csproj": {}
   },
   "projects": {
-    "C:\\Proyectos\\Jonathan-s-Microservices\\Microservices\\Servicios.api.Libreria\\Servicios.api.Libreria.csproj": {
+    "/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Servicios.api.Libreria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Proyectos\\Jonathan-s-Microservices\\Microservices\\Servicios.api.Libreria\\Servicios.api.Libreria.csproj",
+        "projectUniqueName": "/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Servicios.api.Libreria.csproj",
         "projectName": "Servicios.api.Libreria",
-        "projectPath": "C:\\Proyectos\\Jonathan-s-Microservices\\Microservices\\Servicios.api.Libreria\\Servicios.api.Libreria.csproj",
-        "packagesPath": "C:\\Users\\usuario01\\.nuget\\packages\\",
-        "outputPath": "C:\\Proyectos\\Jonathan-s-Microservices\\Microservices\\Servicios.api.Libreria\\obj\\",
+        "projectPath": "/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Servicios.api.Libreria.csproj",
+        "packagesPath": "/Users/jonathanguzman/.nuget/packages/",
+        "outputPath": "/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\usuario01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jonathanguzman/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
