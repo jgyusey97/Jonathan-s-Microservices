@@ -20,7 +20,7 @@ namespace Servicios.api.Libreria.Controllers
             _autorRepository = autorRepository;  //Inyeccion
 
         }
-
+        //Mètodo para poder consultar los autores
         [HttpGet ("autores")]
         public async Task<ActionResult<IEnumerable<Autor>>> GetAutores()
         {

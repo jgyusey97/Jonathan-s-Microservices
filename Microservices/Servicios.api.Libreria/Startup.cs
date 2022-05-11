@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+ï»¿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +28,7 @@ namespace Servicios.api.Libreria
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            //Estamos configurando las conecciones a la base de datos
             services.Configure<MongoSettings>(  //Asignamos los valores a nuestras propiedades
                   options=>
                   {
@@ -38,10 +38,15 @@ namespace Servicios.api.Libreria
                   }
                 );
 
-            services.AddSingleton <MongoSettings>();  //Creamos un Singleton de las configuraciones para la conexión
+
+            //Realizamos un Singleton
+
+            services.AddSingleton <MongoSettings>();  //Creamos un Singleton de las configuraciones para la conexiï¿½n
+
 
             services.AddTransient<IAutorContext, AutorContext>();  // AddTransiet es para que cree instancias de cada metodo individual que se va ejecutando (Cada vez que un cliente crea un api , se crea por cada transaccion)
-            services.AddTransient<IAutorRepository, AutorRepository>();  //Agregamos nuestro repositorio de la clase autor
+            services.AddTransient<IAutorRepository, AutorRepository>();  //Agregamos nuestro repositorio de la clase autor (Realizamos la inyeccion dependencia) Se crea instancia cada vez que un cliente llame un api
+
             
 
 

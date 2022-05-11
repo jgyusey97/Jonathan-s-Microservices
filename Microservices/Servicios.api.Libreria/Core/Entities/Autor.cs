@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Servicios.api.Libreria.Core.Entities
 {
+
+    //Las clases que voy a mapear de mongo
     public class Autor
     {
         [BsonId]

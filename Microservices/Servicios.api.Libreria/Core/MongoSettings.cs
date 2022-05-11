@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace Servicios.api.Libreria.Core
 {
+
+    //Configuracion para la base de datos de Mongo
     public class MongoSettings
     {
         public string ConnectionString { get; set; }

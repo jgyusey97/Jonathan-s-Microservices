@@ -10,10 +10,12 @@ namespace Servicios.api.Libreria.Core.ContextMongoDB
 {
     public class AutorContext: IAutorContext
     {
-        private readonly IMongoDatabase _db;
+        private readonly IMongoDatabase _db;  //Esta variable representa la conexion de la base de datos
 
         //Creamos las interfaces
 
+
+        //Inicializamos el Contexto del Autor
         public AutorContext(IOptions<MongoSettings> options)
         {
             
@@ -22,6 +24,9 @@ namespace Servicios.api.Libreria.Core.ContextMongoDB
             _db = client.GetDatabase(options.Value.DataBase);  
 
         }
+
+
+        //Metodo para retornar los datos de la coleccion de Autor
         public IMongoCollection<Autor> Autores => _db.GetCollection<Autor>("Autor");   
     }
 }
