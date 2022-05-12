@@ -1,16 +1,22 @@
 ﻿using System;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
-namespace Servicios.api.Libreria.Core.Entities
+namespace Servicios.api.Libreria.Core.Entities  
 {
 	public class Document: IDocument
 	{
 
-		
 
-        public ObjectId Id { get; set; }  //La clave Primaria
 
-		public DateTime CreateDate => Id.CreationTime;  //La fecha de Creacion del Registro
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
+        public DateTime CreatedDate => DateTime.Now;//La fecha de Creacion del Registro
+
+
+        
     }
 }
 

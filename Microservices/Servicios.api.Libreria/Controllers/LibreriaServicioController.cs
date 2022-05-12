@@ -18,7 +18,7 @@ namespace Servicios.api.Libreria.Controllers
         private readonly IMongoRepository<AutorEntity> _autorGenericoRepository;
 
 
-        public LibreriaServicioController(IAutorRepository autorRepository, MongoRepository<AutorEntity> autorGenericoRepository ) //Constructor
+        public LibreriaServicioController(IAutorRepository autorRepository, IMongoRepository<AutorEntity> autorGenericoRepository ) //Constructor
         {
 
             _autorRepository = autorRepository;  //Inyeccion

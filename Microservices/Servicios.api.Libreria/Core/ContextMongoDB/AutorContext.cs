@@ -18,10 +18,20 @@ namespace Servicios.api.Libreria.Core.ContextMongoDB
         //Inicializamos el Contexto del Autor
         public AutorContext(IOptions<MongoSettings> options)
         {
+            try
+            {
+
+               var client = new MongoClient(options.Value.ConnectionString);
+               _db = client.GetDatabase(options.Value.DataBase);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("La excepcion que ocurre es esta: " +ex.ToString());
+            }
             
             //Se inicializa el acceso a la base de MongoDB
-            var client = new MongoClient(options.Value.ConnectionString);
-            _db = client.GetDatabase(options.Value.DataBase);  
+       
 
         }
 
