@@ -36,6 +36,43 @@ namespace Servicios.api.Libreria.Repository
         {
             return await _collection.Find(p => true).ToListAsync();
         }
+
+
+        //Metodo que devuelve el Objeto del documento a partir de un ID
+        public async Task<TDocument> GetById(string Id)
+        {
+       
+
+            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, Id);  //Busqueda con el Id que envia el cliente
+
+            return await _collection.Find(filter).SingleOrDefaultAsync();
+        }
+
+        //Insertar el documento
+        public async Task InsertDocument(TDocument document)
+        {
+
+            await _collection.InsertOneAsync(document);
+
+        }
+
+        //Actualizar el documento
+
+        public async Task UpdateDocument(TDocument document)
+        {
+            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, document.Id);
+
+            await _collection.FindOneAndReplaceAsync(filter, document); 
+        }
+
+
+        //Metodo para eliminar un documento
+        public async Task DeleteById(string Id)
+        {
+            var filter = Builders<TDocument>.Filter.Eq(doc => doc.Id, Id);
+
+            await _collection.DeleteOneAsync(filter);  //Eliminar el documento por el ID
+        }
     }
 }
 

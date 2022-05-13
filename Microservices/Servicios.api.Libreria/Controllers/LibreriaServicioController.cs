@@ -17,16 +17,23 @@ namespace Servicios.api.Libreria.Controllers
 
         private readonly IMongoRepository<AutorEntity> _autorGenericoRepository;
 
+        private readonly IMongoRepository<EmpleadoEntity> _empleadoGenericoRepository;
 
-        public LibreriaServicioController(IAutorRepository autorRepository, IMongoRepository<AutorEntity> autorGenericoRepository ) //Constructor
+
+
+        //Inyeccion de dependencias en los Controller
+        public LibreriaServicioController(IAutorRepository autorRepository, IMongoRepository<AutorEntity> autorGenericoRepository , IMongoRepository<EmpleadoEntity> empleadoGenericoRepository) //Constructor
         {
 
             _autorRepository = autorRepository;  //Inyeccion
 
             _autorGenericoRepository = autorGenericoRepository;
-
+            _empleadoGenericoRepository = empleadoGenericoRepository;
 
         }
+
+
+
         //Metodo para poder consultar los autores
         [HttpGet ("autores")]
         public async Task<ActionResult<IEnumerable<Autor>>> GetAutores()
@@ -44,6 +51,17 @@ namespace Servicios.api.Libreria.Controllers
 
             return Ok(autores);
         }
+
+
+        [HttpGet("EmpleadoGenerico")]
+        public async Task<ActionResult<IEnumerable<EmpleadoEntity>>> EmpleadoGenerico()
+        {
+
+            var empleados = await _empleadoGenericoRepository.GetAll();
+
+            return Ok(empleados);  //Retornamos los elementos de la coleccion
+        }
+
 
 
     }
