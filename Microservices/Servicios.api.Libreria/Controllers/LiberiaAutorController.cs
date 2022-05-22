@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Servicios.api.Libreria.Core.Entities;
 using Servicios.api.Libreria.Repository;
 
+
+//Controlador para autor de libreria
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Servicios.api.Libreria.Controllers
@@ -68,6 +70,24 @@ namespace Servicios.api.Libreria.Controllers
 
         }
 
+
+        [HttpPost("pagination")]
+
+        public async Task<ActionResult<PaginationEntity<AutorEntity>>> PostPagination(PaginationEntity<AutorEntity> pagination)
+        {
+
+
+            var resultados = await _autorGenericoRepository.PaginationBy(  //Filtro de la propiedad, y la configuracion para la peticion
+
+                filter => filter.Nombre == pagination.Filter,
+                pagination
+                ) ;
+
+
+
+            return Ok(resultados);
+
+        }
 
     }
 }

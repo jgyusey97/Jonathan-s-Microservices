@@ -22,6 +22,17 @@ namespace Servicios.api.Libreria.Repository
 
 
 
+		//Metodo para realizar la paginacion de los datos
+		Task<PaginationEntity<TDocument>> PaginationBy(
+
+			Expression <Func<TDocument, bool>> filterExpression,
+			PaginationEntity <TDocument> pagination
+
+
+
+		); 
+
+
 	}
 
 
