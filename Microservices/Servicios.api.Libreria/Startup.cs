@@ -60,6 +60,17 @@ namespace Servicios.api.Libreria
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servicios.api.Libreria", Version = "v1" });
             });
 
+
+            //Aplicamos los CORS
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*"); //Cualquier cabecera, cualquier metodo, desde cualquier origen
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +88,8 @@ namespace Servicios.api.Libreria
           
 
             app.UseRouting();
+
+            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS
 
             app.UseAuthorization();
 

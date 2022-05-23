@@ -157,7 +157,7 @@ namespace Servicios.api.Libreria.Repository
             {
                 var valueFilter = ".*" + pagination.FilterValue.Valor + ".*"; //Como si se realizaria un like
 
-                var filter = Builders<TDocument>.Filter.Regex(pagination.FilterValue.Propiedad, new BsonRegularExpression(valueFilter, "i"));
+                var filter = Builders<TDocument>.Filter.Regex(pagination.FilterValue.Propiedad, new BsonRegularExpression(valueFilter, "i"));   //Utilizamos un regex para poder realizar la busqueda dentro de una coleccion
 
              pagination.Data = await _collection.Find(filter)  //Utiliazamos la expresion para el filtro
                                                               .Sort(sort)
