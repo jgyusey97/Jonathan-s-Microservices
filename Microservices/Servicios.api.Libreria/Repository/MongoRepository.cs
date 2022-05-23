@@ -124,6 +124,62 @@ namespace Servicios.api.Libreria.Repository
             return pagination;
 
         }
+
+
+
+        public async Task<PaginationEntity<TDocument>> PaginationByFilter(PaginationEntity<TDocument> pagination)
+        {
+            var sort = Builders<TDocument>.Sort.Ascending(pagination.Sort);
+            if (pagination.SortDirection == "desc") //Opcion para realizar el orden de la lista por descendente 
+            {
+
+                sort = Builders<TDocument>.Sort.Descending(pagination.Sort);
+
+            }
+
+            var totalDocuments = 0;
+            if (pagination.FilterValue==null)
+            {
+
+                //Va a traer todos los registros sin exception
+                pagination.Data = await _collection.Find(p => true)
+                                                             .Sort(sort)
+                                                             .Skip((pagination.Page - 1) * pagination.PageSize)
+                                                             .Limit(pagination.PageSize)
+                                                             .ToListAsync();
+
+
+
+
+                totalDocuments = (await _collection.Find(p => true).ToListAsync()).Count();  //Traera la cantidad de  los documentos de la coleccion
+            }
+            else
+            {
+                var valueFilter = ".*" + pagination.FilterValue.Valor + ".*"; //Como si se realizaria un like
+
+                var filter = Builders<TDocument>.Filter.Regex(pagination.FilterValue.Propiedad, new BsonRegularExpression(valueFilter, "i"));
+
+             pagination.Data = await _collection.Find(filter)  //Utiliazamos la expresion para el filtro
+                                                              .Sort(sort)
+                                                              .Skip((pagination.Page - 1) * pagination.PageSize)
+                                                              .Limit(pagination.PageSize)
+                                                              .ToListAsync();
+
+
+                totalDocuments = (await _collection.Find(filter).ToListAsync()).Count();  //Traera el total de records despues de haber agregado el filtro en los documentos de la coleccion
+            }
+
+            //long totalDocuments = await _collection.CountDocumentsAsync(FilterDefinition<TDocument>.Empty); //.Empty retornara todos los registros de la base de datos
+            var rounded = Math.Ceiling(totalDocuments / Convert.ToDecimal(pagination.PageSize)); //Redondea los decimales a un entero igual retorna un decimal
+
+            var totalPages = Convert.ToInt32(rounded);  
+            pagination.PagesQuantity = totalPages;
+
+            pagination.TotalRows = Convert.ToInt32( totalDocuments);  //Cantidad de records por una determinada de consulta que realizas 
+
+
+            return pagination;
+        }
     }
 }
 

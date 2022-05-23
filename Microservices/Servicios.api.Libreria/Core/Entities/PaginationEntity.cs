@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Servicios.api.Libreria.Core.Entities
 {
- 
-     
+
+
 	//Esta clase es la encargada para la paginacion de los datos de la pagina web
 
 	//Para paginar los objetos de la coleccion que el cliente recibe los parametros para poder realizar la parametrizacion de los datos 
-	
+
 	public class PaginationEntity<TDocument>
 	{
 		public int PageSize { get; set; }
@@ -19,11 +19,21 @@ namespace Servicios.api.Libreria.Core.Entities
 
 		public string SortDirection { get; set; }
 
-		public string Filter { get; set; }
+		public string Filter { get; set; }  //En este string viaja el valor con el cual se va a realizar el
+											//
+		public FilterValueClass FilterValue {get; set;}   //Propiedad para el filter value
+
 
 		public int PagesQuantity { get; set; }
 
 		public IEnumerable<TDocument> Data { get; set; }  //Cualquier coleccion de la base de datos de MongoDB
+
+
+		public int TotalRows { get; set; }
+
+
+
+
 
 	}
 }
