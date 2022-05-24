@@ -7,6 +7,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-//TOma la configracion del app.Module.ts , y la refleja en la pantalla index html
-platformBrowserDynamic().bootstrapModule(AppModule)  //El objeto app module representa la ruta de ejecucion de cada proyecto angular
+
+platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
