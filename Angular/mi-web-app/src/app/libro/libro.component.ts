@@ -8,7 +8,7 @@ import { LibrosService } from '../services/libros.services';
 export class LibroComponent {
   @Input() tituloLibro: string ="";
   @Output() libroClicked = new EventEmitter(); //Si va a viajar a un componente superior tiene que ser output
-  
+
 
   //Creamos el objeto ya instanciado
 constructor(private librosService:LibrosService){ //Cuando se pasa algo en un argumento lo almacena la clase principal
@@ -21,4 +21,6 @@ constructor(private librosService:LibrosService){ //Cuando se pasa algo en un ar
 
   this.librosService.eliminarLibro(this.tituloLibro);
   }
+
+
 }
