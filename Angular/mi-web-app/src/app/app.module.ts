@@ -13,6 +13,8 @@ import { LibrosService } from './services/libros.services';
 import { InicioComponent } from './inicio.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { RegistrarComponent } from './seguridad/registrar/registrar.component';
+import { LoginComponent } from './seguridad/login/login.component';
 
 
 
@@ -22,7 +24,9 @@ import { MaterialModule } from './material.module';
     UsuarioComponent,  //Lo agregamos en la seccion de declarencios
     LibrosComponent,
     LibroComponent,
-    InicioComponent  //Menu principal
+    InicioComponent,
+    RegistrarComponent,
+    LoginComponent  //Menu principal
   ],
   imports: [
     BrowserModule,
