@@ -10,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'] //El estilo de la pagina
 })
 export class AppComponent {
-  title = 'mi-web-app';
+   abrirMenu = false;
 }

@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RegistrarComponent } from './seguridad/registrar/registrar.component';
 import { LoginComponent } from './seguridad/login/login.component';
+import { FlexLayoutModule} from '@angular/flex-layout';
 
 
 
@@ -33,7 +34,8 @@ import { LoginComponent } from './seguridad/login/login.component';
     AppRoutingModule,  //Archivo que contiene las rutas
     FormsModule, 
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [LibrosService],  //En la seccion de providers agregamos los servicios
   bootstrap: [AppComponent]
