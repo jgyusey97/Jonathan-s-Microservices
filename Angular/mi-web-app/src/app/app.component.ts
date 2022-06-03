@@ -1,5 +1,7 @@
 //Las librerias que importamos en angular
 import { Component } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 

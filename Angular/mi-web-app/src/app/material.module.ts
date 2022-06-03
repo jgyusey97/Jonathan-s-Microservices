@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+
 //Importacion y exportacion de los modulos que seran utilizados para nuestro curso web
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import {MatListModule} from '@angular/material/list';
     MatFormFieldModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule,
@@ -24,7 +27,8 @@ import {MatListModule} from '@angular/material/list';
     MatFormFieldModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
 })
 
