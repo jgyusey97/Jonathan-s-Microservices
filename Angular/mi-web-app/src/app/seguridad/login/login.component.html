@@ -1,16 +1,16 @@
 <section fxLayoutAlign="center">  <!--Con esto centramos el formulario-->
 
   <mat-card>
-    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" action="">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"   #f="ngForm" (ngSubmit)="loginUsuario(f)">
   
       <mat-form-field>
         <mat-label>Ingrese E-Mail</mat-label>
-        <input type="email" matInput placeholder="E-Mail">
+        <input type="email" matInput placeholder="E-Mail" name="email" ngModel required=>
         <mat-error>Debe de ingresar un E-mail</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Ingrese Password</mat-label>
-        <input type="password" matInput placeholder="password">
+        <input type="password" matInput placeholder="password" name="password" ngModel required>
         <mat-error>Debe de ingresar un password</mat-error>
       </mat-form-field>
   

@@ -1,6 +1,7 @@
 import { Usuario } from './usuario.model';
 import { LoginData } from './login-data.model';
 
+
 //Este servicio es para el registro de los usuarios y el proceso del login
 export class SeguridadService {
   private usuario: Usuario | any;
@@ -13,6 +14,7 @@ export class SeguridadService {
       nombre: usr.nombre,
       apellidos: usr.apellidos,
       username: usr.username,
+      password:""
     };
   }
 
@@ -24,6 +26,7 @@ export class SeguridadService {
       nombre: '',
       apellidos: '',
       username: '', //En blanco porque no marca
+      password:""
     };
   }
 
