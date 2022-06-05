@@ -1,0 +1,28 @@
+<mat-table [dataSource]="dataSource" matSort>
+  <!--El dataSource es una interface-->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef  mat-sort-header> Titulo</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.titulo}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="descripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Descripcion</mat-header-cell>
+
+    <mat-cell *matCellDef="let element">{{element.descripcion}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="autor" mat-sort-header>
+    <mat-header-cell *matHeaderCellDef> Autor</mat-header-cell>
+
+    <mat-cell *matCellDef="let element">{{element.autor}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="precio" mat-sort-header>
+    <mat-header-cell *matHeaderCellDef> Precio</mat-header-cell>
+
+    <mat-cell *matCellDef="let element">{{element.precio}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="desplegarColumnas"></mat-header-row>
+
+  <mat-row *matRowDef="let row; columns: desplegarColumnas"></mat-row>
+</mat-table>

@@ -18,7 +18,9 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { BarraComponent } from './navegacion/barra/barra.component';
 import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component';
-import { SeguridadService } from './seguridad/seguridad.service';  //Servicio de seguridad 
+import { SeguridadService } from './seguridad/seguridad.service';
+import { BooksComponent } from './books/books.component';  //Servicio de seguridad
+import { BooksService } from './books/books.service';
 
 
 
@@ -32,17 +34,18 @@ import { SeguridadService } from './seguridad/seguridad.service';  //Servicio de
     RegistrarComponent,
     LoginComponent,
     BarraComponent,
-    MenuListaComponent  //Menu principal
+    MenuListaComponent,
+    BooksComponent  //Menu principal
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,  //Archivo que contiene las rutas
-    FormsModule, 
+    FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [LibrosService, SeguridadService],  //En la seccion de providers agregamos los servicios
+  providers: [LibrosService, SeguridadService, BooksService],  //En la seccion de providers agregamos los servicios
   bootstrap: [AppComponent]
 })
 export class AppModule { }

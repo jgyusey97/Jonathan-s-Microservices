@@ -1,11 +1,21 @@
+import { Subject } from 'rxjs';
+
 import { Usuario } from './usuario.model';
 import { LoginData } from './login-data.model';
 
-
+import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
 //Este servicio es para el registro de los usuarios y el proceso del login
-export class SeguridadService {
-  private usuario: Usuario | any;
 
+@Injectable()
+export class SeguridadService {
+  seguridadCambio = new Subject<boolean>(); //Este es la instancia del booleano
+
+   private usuario: Usuario | undefined | null ;  //Cuando no queremos inciar una variable
+
+
+
+  constructor(private router: Router) {}
   registrarUsuario(usr: Usuario) {
     //Esta propiedad es para el registro del usuario
     this.usuario = {
@@ -14,8 +24,12 @@ export class SeguridadService {
       nombre: usr.nombre,
       apellidos: usr.apellidos,
       username: usr.username,
-      password:""
+      password: '',
     };
+
+    this.seguridadCambio.next(true); //Notificar
+
+    this.router.navigate(['/']); //Redireccionando al componente de incio
   }
 
   //Este metodo sera utilizado para poder realizar el login
@@ -26,13 +40,32 @@ export class SeguridadService {
       nombre: '',
       apellidos: '',
       username: '', //En blanco porque no marca
-      password:""
+      password: '',
     };
+    this.seguridadCambio.next(true);
+
+    this.router.navigate(['/']);
   }
 
   //Metodo para cerrar la sesion
 
   salirSesion() {
     this.usuario = null;
+
+    this.seguridadCambio.next(false);
+
+    this.router.navigate(['/login']); //Que me redireccione al componente Login
   }
+
+  obtenerUsuario (){
+
+    return { ...this.usuario}
+  }
+
+  onSesion(){
+
+    return this.usuario!=null;
+
+  }
+
 }
