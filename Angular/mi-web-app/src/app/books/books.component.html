@@ -1,3 +1,10 @@
+<div fxLayoutAlign="center center">
+
+  <mat-form-field fxFlex="60%">
+    <input matInput type="text" (keyup)="hacerFiltro($event)"   placeholder="Ingrese texto">
+  </mat-form-field>
+
+</div>
 <mat-table [dataSource]="dataSource" matSort>
   <!--El dataSource es una interface-->
   <ng-container matColumnDef="titulo">
@@ -10,14 +17,14 @@
     <mat-cell *matCellDef="let element">{{element.descripcion}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="autor" mat-sort-header>
-    <mat-header-cell *matHeaderCellDef> Autor</mat-header-cell>
+  <ng-container matColumnDef="autor">
+    <mat-header-cell *matHeaderCellDef  mat-sort-header> Autor</mat-header-cell>
 
     <mat-cell *matCellDef="let element">{{element.autor}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="precio" mat-sort-header>
-    <mat-header-cell *matHeaderCellDef> Precio</mat-header-cell>
+  <ng-container matColumnDef="precio" >
+    <mat-header-cell *matHeaderCellDef  mat-sort-header> Precio</mat-header-cell>
 
     <mat-cell *matCellDef="let element">{{element.precio}}</mat-cell>
   </ng-container>
