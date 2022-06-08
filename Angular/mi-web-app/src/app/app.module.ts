@@ -21,6 +21,7 @@ import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component
 import { SeguridadService } from './seguridad/seguridad.service';
 import { BooksComponent } from './books/books.component';  //Servicio de seguridad
 import { BooksService } from './books/books.service';
+import { BookNuevoComponent } from './books/book-nuevo.component';
 
 
 
@@ -35,7 +36,8 @@ import { BooksService } from './books/books.service';
     LoginComponent,
     BarraComponent,
     MenuListaComponent,
-    BooksComponent  //Menu principal
+    BooksComponent , //Menu principal
+    BookNuevoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { BooksService } from './books/books.service';
     FlexLayoutModule
   ],
   providers: [LibrosService, SeguridadService, BooksService],  //En la seccion de providers agregamos los servicios
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[BookNuevoComponent]
 })
 export class AppModule { }

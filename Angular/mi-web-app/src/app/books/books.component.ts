@@ -3,7 +3,9 @@ import { BooksService } from './books.service';
 import { Books } from './books.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-
+import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { BookNuevoComponent } from './book-nuevo.component';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -15,12 +17,16 @@ export class BooksComponent implements OnInit , AfterViewInit{
   desplegarColumnas = ['titulo', 'descripcion', 'autor', 'precio'];
 
   dataSource = new MatTableDataSource<Books>(); //El source de los datos
-  
+
   @ViewChild(MatSort)
   ordenamiento: MatSort = new MatSort() ;
-  constructor(private booksService: BooksService) {
 
-    this.ordenamiento =  new MatSort();
+  @ViewChild(MatPaginator) paginacion!:MatPaginator ;  //Para realizar la paginacion en la pagina de angular
+  constructor(private booksService: BooksService, private dialog: MatDialog) {
+
+
+
+
   }
   hacerFiltro(filtro: Event) {
 
@@ -34,7 +40,13 @@ export class BooksComponent implements OnInit , AfterViewInit{
 
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.ordenamiento;    
+    this.dataSource.sort = this.ordenamiento;
+    this.dataSource.paginator = this.paginacion;
   }
-  
+
+  //Metodo para abrir el dialogo
+  abrirDialog(){
+    this.dialog.open(BookNuevoComponent);
+
+  }
 }

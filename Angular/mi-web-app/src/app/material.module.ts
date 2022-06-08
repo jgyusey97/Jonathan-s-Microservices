@@ -9,6 +9,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
 
 //Importacion y exportacion de los modulos que seran utilizados para nuestro curso web
 @NgModule({
@@ -22,7 +24,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatListModule,
     MatCardModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -34,7 +38,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatListModule,
     MatCardModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
 })
 
