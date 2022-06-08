@@ -22,7 +22,8 @@ import { SeguridadService } from './seguridad/seguridad.service';
 import { BooksComponent } from './books/books.component';  //Servicio de seguridad
 import { BooksService } from './books/books.service';
 import { BookNuevoComponent } from './books/book-nuevo.component';
-
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AutoresComponent } from './autores/autores.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { BookNuevoComponent } from './books/book-nuevo.component';
     BarraComponent,
     MenuListaComponent,
     BooksComponent , //Menu principal
-    BookNuevoComponent
+    BookNuevoComponent, AutoresComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,7 @@ import { BookNuevoComponent } from './books/book-nuevo.component';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [LibrosService, SeguridadService, BooksService],  //En la seccion de providers agregamos los servicios
+  providers: [LibrosService, SeguridadService, BooksService, {provide: MAT_DATE_LOCALE, useValue:'es-ES'}],  //En la seccion de providers agregamos los servicios
   bootstrap: [AppComponent],
   entryComponents:[BookNuevoComponent]
 })
