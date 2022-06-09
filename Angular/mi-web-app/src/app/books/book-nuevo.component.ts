@@ -1,23 +1,34 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
 import { MatDatepicker } from '@angular/material/datepicker';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSelectChange } from '@angular/material/select';
+import { Autor } from '../autores/autor.model';
+import { AutoresService } from '../autores/autores.service';
 import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-book-nuevo',
   templateUrl:'./book-nuevo.component.html',
 })
-export class BookNuevoComponent {
+export class BookNuevoComponent implements OnInit {
   selectAutor: string ="";
   selectAutorTexto: string ="";
   fechaPublicacion: string = "";
 
 
-  constructor(private bookService: BooksService, private dialogRef:MatDialog){
+   autores : Autor [] = [];
 
+
+  //Los servicios deben de ser agregados al constructor
+  constructor(private bookService: BooksService, private dialogRef:MatDialog, private autoresService: AutoresService){
+
+  }
+
+  //Este se ejecuta despues del constructor de la clase
+  ngOnInit(): void {
+      this.autores = this.autoresService.obtenerAutores();
   }
 
   //MM-DD-YY (Por default)

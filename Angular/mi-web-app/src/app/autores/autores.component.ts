@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Autor} from "./autor.model";
+import { AutoresService } from './autores.service';
 
 @Component({
   selector: 'app-autores',
@@ -13,9 +14,14 @@ export class AutoresComponent implements OnInit {
 
   desplegarColumnas = ["nombre", "apellido", "gradoAcademico"];
    dataSource = new MatTableDataSource<Autor>();
-  constructor() { }
+   
+
+
+
+  constructor(private autoresServices: AutoresService) { }
 
   ngOnInit(): void {
+   this.dataSource.data = this.autoresServices.obtenerAutores(); 
   }
 
 }

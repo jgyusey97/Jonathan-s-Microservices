@@ -1,5 +1,14 @@
+import { Injectable } from "@angular/core";
 import {Autor} from "./autor.model";
 
+
+
+
+//Agregar el servicio en la raiz de la aplicacion
+@Injectable ({
+
+  providedIn:"root"
+})
 export class AutoresService{
 
   private autoresLista: Autor[] = [
