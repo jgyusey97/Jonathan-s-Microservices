@@ -1,6 +1,5 @@
 ﻿<Properties StartupConfiguration="{956666E7-40B5-4605-8DF1-905C6132FC18}|Default">
-  <MonoDevelop.Ide.ItemProperties.Servicios.api.Libreria PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="28" column="1" />
@@ -10,6 +9,8 @@
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="18" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Servicios.api.Libreria/Controllers/LibroController.cs">
     <Files>
       <File FileName="Servicios.api.Libreria/Program.cs" Line="19" Column="54" />
@@ -35,12 +36,12 @@
       <File FileName="Servicios.api.Libreria/Core/Entities/PaginationEntity.cs" Line="36" Column="1" />
       <File FileName="Servicios.api.Libreria/Core/Entities/FilterValueClass.cs" Line="5" Column="31" />
       <File FileName="Servicios.api.Libreria/Core/Entities/LibroEntity.cs" Line="28" Column="94" />
-      <File FileName="Servicios.api.Libreria/Controllers/LibroController.cs" Line="52" Column="10" />
+      <File FileName="Servicios.api.Libreria/Controllers/LibroController.cs" Line="1" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Microservices" expanded="True" selected="True">
+          <Node name="Microservices" expanded="True">
             <Node name="Servicios.api.Libreria" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
@@ -60,6 +61,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Servicios.api.Libreria PreferredExecutionTarget="/Applications/Firefox.app" />
 </Properties>
