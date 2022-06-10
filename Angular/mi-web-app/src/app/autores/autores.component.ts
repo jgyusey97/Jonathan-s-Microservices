@@ -1,27 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Autor} from "./autor.model";
+import { Subscription } from 'rxjs';
+import { Autor } from './autor.model';
 import { AutoresService } from './autores.service';
 
 @Component({
   selector: 'app-autores',
   templateUrl: './autores.component.html',
-  styleUrls: ['./autores.component.css']
+  styleUrls: ['./autores.component.css'],
 })
-export class AutoresComponent implements OnInit {
+export class AutoresComponent implements OnInit, OnDestroy {
+  desplegarColumnas = ['nombre', 'apellido', 'gradoAcademico'];
+  dataSource = new MatTableDataSource<Autor>();
 
-
-
-  desplegarColumnas = ["nombre", "apellido", "gradoAcademico"];
-   dataSource = new MatTableDataSource<Autor>();
-   
-
-
-
-  constructor(private autoresServices: AutoresService) { }
+  private autorSubscripcion?: Subscription;
+  constructor(private autoresServices: AutoresService) {}
 
   ngOnInit(): void {
-   this.dataSource.data = this.autoresServices.obtenerAutores(); 
+    this.autoresServices.obtenerAutores();
+    this.autorSubscripcion = this.autoresServices
+      .obtenerActualListener()
+      .subscribe((autores: Autor[]) => {
+        this.dataSource.data = autores;
+      });
   }
-
+  ngOnDestroy(): void {
+    this.autorSubscripcion?.unsubscribe();
+  }
 }

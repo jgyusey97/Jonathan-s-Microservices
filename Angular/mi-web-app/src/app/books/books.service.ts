@@ -1,19 +1,16 @@
 import { Books } from "./books.model";
 import { Subject } from "rxjs";
-
+import { environment } from "src/environments/environment";
+import { HttpClient } from "@angular/common/http";
 export class BooksService{
 
-private bookLista : Books [] = [
+baseUrl =  environment.baseUrl;
+
+private bookLista : Books [] = [];
 
 
 
- {libroId:1, titulo:"Algoritmos", descripcion :"Libro basico", autor:"Vaxi Drez", precio:18},
- {libroId:1, titulo:"Angular", descripcion :"Libro intermedio", autor:"Vaxi Drez", precio:25},
- {libroId:1, titulo:"Flutter", descripcion :"Master", autor:"Vaxi Drez", precio:30},
- {libroId:1, titulo:"ASP.NET", descripcion :"Asp.Net", autor:"Vaxi Drez", precio:99},
- {libroId:1, titulo:"Java", descripcion :"Asp.Net", autor:"Vaxi Drez", precio:99},
 
- ];
 
 
  booksSubject = new Subject <Books>();
@@ -27,7 +24,7 @@ guardarLibro(book: Books){
 
    //Agregamos el objeto a la lista pero este objeto debe de ser actualizado
   this.bookLista.push(book);
-  
+
   //Notificamos
   this.booksSubject.next(book);
 }

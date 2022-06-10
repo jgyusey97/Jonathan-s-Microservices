@@ -28,7 +28,7 @@ export class BookNuevoComponent implements OnInit {
 
   //Este se ejecuta despues del constructor de la clase
   ngOnInit(): void {
-      this.autores = this.autoresService.obtenerAutores();
+    //  this.autores = this.autoresService.obtenerAutores();
   }
 
   //MM-DD-YY (Por default)
@@ -40,9 +40,9 @@ export class BookNuevoComponent implements OnInit {
   //Metodo para poder guardar los libros
 
   guardarLibro( form: NgForm){
-    
+
     if(form.valid){  //Solo realiza la insercion si la form valid es true
-      
+
 
       this.bookService.guardarLibro({
         libroId:1,
@@ -56,12 +56,12 @@ export class BookNuevoComponent implements OnInit {
     }
 
 
-    
+
   }
 
   selected(event: MatSelectChange){
     this.selectAutorTexto = (event.source.selected as MatOption).viewValue;
-     
+
   }
 
 
