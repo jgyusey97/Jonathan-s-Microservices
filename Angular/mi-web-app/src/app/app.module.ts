@@ -50,7 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [LibrosService, SeguridadService, BooksService, {provide: MAT_DATE_LOCALE, useValue:'es-ES'}],  //En la seccion de providers agregamos los servicios
+  providers: [LibrosService, SeguridadService, {provide: MAT_DATE_LOCALE, useValue:'es-ES'}],  //En la seccion de providers agregamos los servicios
   bootstrap: [AppComponent],
   entryComponents:[BookNuevoComponent]
 })

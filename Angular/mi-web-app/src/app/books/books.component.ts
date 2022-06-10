@@ -3,10 +3,11 @@ import { BooksService } from './books.service';
 import { Books } from './books.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { BookNuevoComponent } from './book-nuevo.component';
 import { Subscription } from 'rxjs';
+import { PaginationBook } from './pagination-books.module';
 
 @Component({
   selector: 'app-books',
@@ -22,32 +23,45 @@ export class BooksComponent implements OnInit , OnDestroy,  AfterViewInit{
 
   @ViewChild(MatSort)
   ordenamiento: MatSort = new MatSort() ;
-  
+
   private bookSubscription?: Subscription;
 
   @ViewChild(MatPaginator) paginacion!:MatPaginator ;  //Para realizar la paginacion en la pagina de angular
+
+ totalLibros =0;
+ librosPorPagina =2;
+ paginaCombo = [1,2,5,10];
+paginActual =1;
+sort="titulo";
+sortDirection ="asc";
+filterValue = null;
+
+
   constructor(private booksService: BooksService, private dialog: MatDialog) {
+  }
 
 
+  eventoPaginador(event: PageEvent){
+
+   this.librosPorPagina = event.pageSize;
+   this.paginActual = event.pageIndex +1;
+   this.booksService.obtenerLibros(this.librosPorPagina, this.paginActual,this.sort, this.sortDirection, this.filterValue );
 
   }
 
-  
   hacerFiltro(filtro: Event) {
 
       this.dataSource.filter = (filtro.target as HTMLInputElement).value;
   }
   ngOnInit(): void {
-    // this.bookData= this.booksService.obtenerLibros ();
+    this.booksService.obtenerLibros(this.librosPorPagina, this.paginActual,this.sort, this.sortDirection, this.filterValue );
+    this.booksService
+       .obtenerActualListener()
+       .subscribe((pagination: PaginationBook)=>{
+        this.dataSource = new MatTableDataSource<Books>(pagination.data);
+        this.totalLibros = pagination.totalRows;
+       });
 
-
-    this.dataSource.data = this.booksService.obtenerLibros(); //Utilizamos los servicios para poder obtener la informacion
-    
-    //Creamos la subscripcion
-    this.bookSubscription = this.booksService.booksSubject.subscribe(()=>{
-        this.dataSource.data = this.booksService.obtenerLibros();
-     });
-  
   }
 
 
