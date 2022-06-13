@@ -31,7 +31,7 @@
             <mat-label>Ingrese el Autor</mat-label>
             <mat-select [(ngModel)]="selectAutor" name="autor" (selectionChange)="selected($event)">
 
-              <mat-option *ngFor="let autr of autores" value="autr.autorId">
+              <mat-option *ngFor="let autr of autores" [value]="autr.id">
 
                 {{autr.nombre +' '+autr.apellido}}
               </mat-option>

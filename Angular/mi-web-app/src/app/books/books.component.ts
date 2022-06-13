@@ -1,8 +1,14 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { BooksService } from './books.service';
 import { Books } from './books.model';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { BookNuevoComponent } from './book-nuevo.component';
@@ -14,7 +20,7 @@ import { PaginationBook } from './pagination-books.module';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css'],
 })
-export class BooksComponent implements OnInit , OnDestroy,  AfterViewInit{
+export class BooksComponent implements OnInit, OnDestroy, AfterViewInit {
   bookData: Books[] = []; //Tenemos un arreglo de Libros
 
   desplegarColumnas = ['titulo', 'descripcion', 'autor', 'precio'];
@@ -22,54 +28,80 @@ export class BooksComponent implements OnInit , OnDestroy,  AfterViewInit{
   dataSource = new MatTableDataSource<Books>(); //El source de los datos
 
   @ViewChild(MatSort)
-  ordenamiento: MatSort = new MatSort() ;
+  ordenamiento: MatSort = new MatSort();
 
   private bookSubscription?: Subscription;
 
-  @ViewChild(MatPaginator) paginacion!:MatPaginator ;  //Para realizar la paginacion en la pagina de angular
+  @ViewChild(MatPaginator) paginacion!: MatPaginator; //Para realizar la paginacion en la pagina de angular
 
- totalLibros =0;
- librosPorPagina =2;
- paginaCombo = [1,2,5,10];
-paginActual =1;
-sort="titulo";
-sortDirection ="asc";
-filterValue = null;
+  totalLibros = 0;
+  librosPorPagina = 2;
+  paginaCombo = [1, 2, 5, 10];
+  paginActual = 1;
+  sort = 'titulo';
+  sortDirection = 'asc';
+  filterValue = null;
 
+  constructor(private booksService: BooksService, private dialog: MatDialog) {}
 
-  constructor(private booksService: BooksService, private dialog: MatDialog) {
+  eventoPaginador(event: PageEvent) {
+    this.librosPorPagina = event.pageSize;
+    this.paginActual = event.pageIndex + 1;
+    this.booksService.obtenerLibros(
+      this.librosPorPagina,
+      this.paginActual,
+      this.sort,
+      this.sortDirection,
+      this.filterValue
+    );
   }
 
+  timeout: any = null;
 
-  eventoPaginador(event: PageEvent){
+  hacerFiltro(filtro: any) {
+    clearTimeout(this.timeout);
 
-   this.librosPorPagina = event.pageSize;
-   this.paginActual = event.pageIndex +1;
-   this.booksService.obtenerLibros(this.librosPorPagina, this.paginActual,this.sort, this.sortDirection, this.filterValue );
+    var $this = this;
+    this.timeout = setTimeout(function () {
+      if (filtro.keyCode != 13) {
+        const filterValueLocal = {
+          propiedad: 'titulo', //Ordenado por el libro
+          valor: filtro.target.value,
+        };
 
-  }
+        $this.booksService.obtenerLibros(
+          $this.librosPorPagina,
+          $this.paginActual,
+          $this.sort,
+          $this.sortDirection,
+          filterValueLocal
+        );
+        console.log("si fue bro");
+      };
+    }, 1000); //Esta operacion se va ejecutar cuando el usuario deje de escribir por mas de 1 segundo
 
-  hacerFiltro(filtro: Event) {
-
-      this.dataSource.filter = (filtro.target as HTMLInputElement).value;
+    this.dataSource.filter = (filtro.target as HTMLInputElement).value;
   }
   ngOnInit(): void {
-    this.booksService.obtenerLibros(this.librosPorPagina, this.paginActual,this.sort, this.sortDirection, this.filterValue );
+    this.booksService.obtenerLibros(
+      this.librosPorPagina,
+      this.paginActual,
+      this.sort,
+      this.sortDirection,
+      this.filterValue
+    );
     this.booksService
-       .obtenerActualListener()
-       .subscribe((pagination: PaginationBook)=>{
+      .obtenerActualListener()
+      .subscribe((pagination: PaginationBook) => {
         this.dataSource = new MatTableDataSource<Books>(pagination.data);
         this.totalLibros = pagination.totalRows;
-       });
-
+      });
   }
-
 
   //Este metodo se ejecuta cuando se destruye el componente
   ngOnDestroy(): void {
-      this.bookSubscription?.unsubscribe();
+    this.bookSubscription?.unsubscribe();
   }
-
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.ordenamiento;
@@ -77,10 +109,31 @@ filterValue = null;
   }
 
   //Metodo para abrir el dialogo
-  abrirDialog(){
-    this.dialog.open(BookNuevoComponent,{
-      width:"350px"
-    } );
+  abrirDialog() {
+    const dialogRef = this.dialog.open(BookNuevoComponent, {
+      width: '550px',
+    });
 
+    dialogRef.afterClosed().subscribe(() => {
+      this.booksService.obtenerLibros(
+        this.librosPorPagina,
+        this.paginActual,
+        this.sort,
+        this.sortDirection,
+        this.filterValue
+      );
+    });
+  }
+  //Este metodo es para Ordenar los datos conforme a los elementos de filtros de la pantalla
+  ordenarColumna(event: Sort) {
+    this.sort = event.active;
+    this.sortDirection = event.direction;
+    this.booksService.obtenerLibros(
+      this.librosPorPagina,
+      this.paginActual,
+      event.active,
+      event.direction,
+      this.filterValue
+    );
   }
 }

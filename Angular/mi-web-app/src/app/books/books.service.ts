@@ -23,7 +23,7 @@ bookPaginationSubject = new Subject<PaginationBook>();
 
 
 
- booksSubject = new Subject <Books>();
+ booksSubject = new Subject();
 
 constructor (private http:HttpClient){
 
@@ -62,16 +62,27 @@ obtenerActualListener(){
 
 
 
+//Vamos a guardar el libro por http
+guardarLibro(book: any){
 
 
-guardarLibro(book: Books){
-
-   //Agregamos el objeto a la lista pero este objeto debe de ser actualizado
-  this.bookLista.push(book);
-
+  this.http.post(this.baseUrl+'api/Libro', book)
+  .subscribe((response)=>{
+    this.booksSubject.next(null);
+  });
   //Notificamos
-  this.booksSubject.next(book);
+
+
+
 }
+
+guardarLibroListener(){
+
+  return this.booksSubject.asObservable(); //Retorna
+
+}
+
+
 
 
 
