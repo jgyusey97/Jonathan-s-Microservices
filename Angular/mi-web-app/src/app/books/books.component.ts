@@ -22,7 +22,7 @@ import { PaginationBook } from './pagination-books.module';
 })
 export class BooksComponent implements OnInit, OnDestroy, AfterViewInit {
   bookData: Books[] = []; //Tenemos un arreglo de Libros
-
+  timeout: any = null;
   desplegarColumnas = ['titulo', 'descripcion', 'autor', 'precio'];
 
   dataSource = new MatTableDataSource<Books>(); //El source de los datos
@@ -40,11 +40,11 @@ export class BooksComponent implements OnInit, OnDestroy, AfterViewInit {
   paginActual = 1;
   sort = 'titulo';
   sortDirection = 'asc';
-  filterValue = null;
+  filterValue:any;
 
   constructor(private booksService: BooksService, private dialog: MatDialog) {}
 
-  eventoPaginador(event: PageEvent) {
+  eventoPaginador(event: PageEvent):void {
     this.librosPorPagina = event.pageSize;
     this.paginActual = event.pageIndex + 1;
     this.booksService.obtenerLibros(
@@ -56,19 +56,20 @@ export class BooksComponent implements OnInit, OnDestroy, AfterViewInit {
     );
   }
 
-  timeout: any = null;
 
-  hacerFiltro(filtro: any) {
+
+  hacerFiltro(filtro: any):void {
     clearTimeout(this.timeout);
 
-    var $this = this;
-    this.timeout = setTimeout(function () {
+    const $this = this;
+    this.timeout = setTimeout( () =>{
       if (filtro.keyCode != 13) {
         const filterValueLocal = {
           propiedad: 'titulo', //Ordenado por el libro
           valor: filtro.target.value,
         };
 
+        $this.filterValue=filterValueLocal;
         $this.booksService.obtenerLibros(
           $this.librosPorPagina,
           $this.paginActual,
