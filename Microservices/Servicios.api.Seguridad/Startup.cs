@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Servicios.api.Seguridad.Core.Application;
 using Servicios.api.Seguridad.Core.Entities;
 using Servicios.api.Seguridad.Core.Persistence;
 
@@ -46,8 +48,12 @@ namespace Servicios.api.Seguridad
 
             services.TryAddSingleton<ISystemClock, SystemClock>();
 
+            services.AddMediatR(typeof(Register.UsuarioRegisterCommand).Assembly);  //Buscara las instancias de las clases CQRS patron
 
-            services.AddControllersWithViews();
+
+            services.AddAutoMapper(typeof(Register.UsuarioRegisterHandler));  //Estamos realizando la inyeccion del automapper en la clase
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
