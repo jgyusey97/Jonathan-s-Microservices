@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,24 @@ namespace Servicios.api.Seguridad.Core.Application
 
         }
 
+        //Esta clase va validar cada propiedad segun la regla que tengamos definida
+        public class UsuarioRegisterValidation: AbstractValidator<UsuarioRegisterCommand>
+        {
+
+            public UsuarioRegisterValidation()
+            {
+                RuleFor(x => x.Nombre).NotEmpty();
+                RuleFor(x => x.Apellido).NotEmpty();
+                RuleFor(x => x.Username).NotEmpty();
+                RuleFor(x => x.Email).NotEmpty();
+                RuleFor(x => x.Password).NotEmpty();
+
+
+
+
+            }
+
+        }
         public class UsuarioRegisterHandler : IRequestHandler<UsuarioRegisterCommand, UsuarioDto>
         {
             private readonly SeguridadContexto _context;

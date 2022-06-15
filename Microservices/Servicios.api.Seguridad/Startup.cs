@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -53,7 +54,8 @@ namespace Servicios.api.Seguridad
 
             services.AddAutoMapper(typeof(Register.UsuarioRegisterHandler));  //Estamos realizando la inyeccion del automapper en la clase
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Register>()) ;  //Utilizamos la FluentValidation en el register
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

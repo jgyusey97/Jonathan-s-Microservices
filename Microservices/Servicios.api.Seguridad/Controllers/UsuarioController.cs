@@ -26,6 +26,8 @@ namespace Servicios.api.Seguridad.Controllers
 
 
         }
+
+        //Este metodo registrar representa los parametros del usuario
         [HttpPost("registrar")]
 
         public async Task<ActionResult<UsuarioDto>> Registrar(Register.UsuarioRegisterCommand parametros)
