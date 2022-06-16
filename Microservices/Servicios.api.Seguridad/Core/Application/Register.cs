@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Servicios.api.Seguridad.Core.DTO;
 using Servicios.api.Seguridad.Core.Entities;
+using Servicios.api.Seguridad.Core.JwtLogic;
 using Servicios.api.Seguridad.Core.Persistence;
 
 namespace Servicios.api.Seguridad.Core.Application
@@ -62,6 +63,8 @@ namespace Servicios.api.Seguridad.Core.Application
         }
         public class UsuarioRegisterHandler : IRequestHandler<UsuarioRegisterCommand, UsuarioDto>
         {
+
+            //CON ESTOS OBJETOS HAGO LA INSERCION A LA BASE DE DATOS Y TOKEN
             private readonly SeguridadContexto _context;
 
 
@@ -69,8 +72,10 @@ namespace Servicios.api.Seguridad.Core.Application
 
             private readonly IMapper _mapper;
 
+            private readonly IJwtGenerator _jwtGenerator;
 
-            public UsuarioRegisterHandler(SeguridadContexto context, UserManager<Usuario> userManager, IMapper mapper)
+
+            public UsuarioRegisterHandler(SeguridadContexto context, UserManager<Usuario> userManager, IMapper mapper, IJwtGenerator jwtGenerator)
             {
                 _context = context;
 
@@ -78,6 +83,7 @@ namespace Servicios.api.Seguridad.Core.Application
 
                 _mapper = mapper;
 
+                _jwtGenerator = jwtGenerator;
             }
 
             public async Task<UsuarioDto> Handle(UsuarioRegisterCommand request, CancellationToken cancellationToken)
@@ -110,7 +116,7 @@ namespace Servicios.api.Seguridad.Core.Application
                 {
                     Nombre = request.Nombre,
                     Apellido = request.Apellido,
-                    Email = request.Apellido,
+                    Email = request.Email,
                     UserName = request.Username,
                   
                    
@@ -122,7 +128,12 @@ namespace Servicios.api.Seguridad.Core.Application
                 {
 
 
-                  return  _mapper.Map<Usuario, UsuarioDto>(usuario);  //Esto me devolvera un mapeo en una clase DTO en base a una clase base
+                  var usuarioDto=  _mapper.Map<Usuario, UsuarioDto>(usuario);  //Esto me devolvera un mapeo en una clase DTO en base a una clase base
+                    usuarioDto.Token = _jwtGenerator.CreateToken(usuario);
+
+
+
+                        return usuarioDto;
 
                 }
                 else

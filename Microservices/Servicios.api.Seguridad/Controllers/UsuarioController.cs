@@ -38,7 +38,30 @@ namespace Servicios.api.Seguridad.Controllers
 
 
         }
-      
+
+        //Este metodo registrar representa los parametros del usuario
+        [HttpPost("login")]
+
+        public async Task<ActionResult<UsuarioDto>> Login(Login.UsuarioLoginCommand parametros)
+        {
+
+
+            return await _mediator.Send(parametros);
+
+
+        }
+
+        //Este metodo registrar representa los parametros del usuario
+        [HttpGet]
+        public async Task<ActionResult<UsuarioDto>> Get()
+        {
+
+
+            return await _mediator.Send(new UsuarioActual.UsuarioActualCommand());
+
+
+        }
+
     }
 }
 

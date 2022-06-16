@@ -20,9 +20,9 @@ namespace Servicios.api.Seguridad.Core.JwtLogic
 
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bkwPl}4F2N6L!OuJt&vo8Q)bl<|N_Z "));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bkwPl}4F2N6L!OuJt&vo8Q)bl<|N_Z"));
 
-            var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);   //La clave asimetrica y el tipo de Encriptacion
+            var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);   //La clave asimetrica y el tipo de Encriptacion
 
             var tokenDescription = new SecurityTokenDescriptor
             {

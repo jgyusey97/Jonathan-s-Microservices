@@ -12,13 +12,18 @@ namespace Servicios.api.Seguridad.Core.DTO
 		[JsonPropertyName("apellido")]
 		public string Apellido { get; set; }
 
-		[JsonPropertyName("userName")]
+		[JsonPropertyName("username")]
 
 		public string Username { get; set; }
 
 		[JsonPropertyName("email")]
 
 		public string Email { get; set; }
+
+
+		[JsonPropertyName("token")]
+
+		public string Token { get; set; }
 
 
 	}

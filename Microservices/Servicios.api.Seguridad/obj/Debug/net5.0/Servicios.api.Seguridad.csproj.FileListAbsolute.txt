@@ -33,12 +33,12 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Options.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Primitives.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Identity.Client.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
-/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Newtonsoft.Json.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
@@ -87,3 +87,4 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/Servicios.api.Seguridad.pdb
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/Servicios.api.Seguridad.genruntimeconfig.cache
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/ref/Servicios.api.Seguridad.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
