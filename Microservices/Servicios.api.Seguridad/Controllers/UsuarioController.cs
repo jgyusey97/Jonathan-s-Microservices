@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Servicios.api.Seguridad.Core.Application;
-using Servicios.api.Seguridad.Core.DTO;
+using Servicios.api.Seguridad.Core.Dto;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -50,7 +50,7 @@ namespace Servicios.api.Seguridad.Controllers
 
 
         }
-
+        
         //Este metodo registrar representa los parametros del usuario
         [HttpGet]
         public async Task<ActionResult<UsuarioDto>> Get()

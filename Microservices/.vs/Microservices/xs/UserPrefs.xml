@@ -7,7 +7,7 @@
       <File FileName="Servicios.api.Seguridad/Core/JwtLogic/IJwtGenerator.cs" Line="8" Column="10" />
       <File FileName="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" Line="15" Column="1" />
       <File FileName="Servicios.api.Seguridad/Core/Application/Login.cs" Line="79" Column="1" />
-      <File FileName="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" Line="24" Column="1" />
+      <File FileName="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" Line="25" Column="14" />
       <File FileName="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" Line="43" Column="70" />
       <File FileName="Servicios.api.Seguridad/Migrations/SeguridadContextoModelSnapshot.cs" Line="210" Column="41" />
       <File FileName="Servicios.api.Seguridad/Core/JwtLogic/IUsuarioSesion.cs" Line="1" Column="1" />
@@ -34,9 +34,7 @@
                 <Node name="Application" expanded="True" />
                 <Node name="DTO" expanded="True" />
                 <Node name="Entities" expanded="True" />
-                <Node name="JwtLogic" expanded="True">
-                  <Node name="UsuarioSesion.cs" selected="True" />
-                </Node>
+                <Node name="JwtLogic" expanded="True" />
                 <Node name="Persistence" expanded="True" />
               </Node>
               <Node name="Migrations" expanded="True" />
@@ -50,9 +48,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Servicios.api.Seguridad PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="28" column="1" />
@@ -69,6 +67,6 @@
       <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/Login.cs" relfile="Servicios.api.Seguridad/Core/Application/Login.cs" line="79" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Servicios.api.Libreria PreferredExecutionTarget="/Applications/Firefox.app" />
 </Properties>

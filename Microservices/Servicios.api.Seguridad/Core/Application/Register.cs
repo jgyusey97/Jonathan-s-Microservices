@@ -8,7 +8,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Servicios.api.Seguridad.Core.DTO;
+using Servicios.api.Seguridad.Core.Dto;
 using Servicios.api.Seguridad.Core.Entities;
 using Servicios.api.Seguridad.Core.JwtLogic;
 using Servicios.api.Seguridad.Core.Persistence;

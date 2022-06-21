@@ -1,22 +1,30 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Servicios.api.Seguridad.Core.Application;
 using Servicios.api.Seguridad.Core.Entities;
 using Servicios.api.Seguridad.Core.JwtLogic;
 using Servicios.api.Seguridad.Core.Persistence;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Servicios.api.Seguridad
 {
@@ -59,6 +67,7 @@ namespace Servicios.api.Seguridad
 
      
 
+           
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("bkwPl}4F2N6L!OuJt&vo8Q)bl<|N_Z"));
 
             //Validar que la el token JWT contenga la clave que ha sido asignada
@@ -93,6 +102,9 @@ namespace Servicios.api.Seguridad
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication(); //Usar cuandos e desea saber el usuario que esta actualemnte en l; sesion por medio de un jwt token
+
 
             app.UseEndpoints(endpoints =>
             {

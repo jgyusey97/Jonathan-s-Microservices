@@ -17,6 +17,7 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/MediatR.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/MediatR.Contracts.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -30,8 +31,6 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Identity.Core.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Identity.Stores.dll
-/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Options.dll
-/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Extensions.Primitives.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.Identity.Client.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
@@ -43,7 +42,6 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Runtime.Caching.dll
-/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
@@ -87,4 +85,3 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/Servicios.api.Seguridad.pdb
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/Servicios.api.Seguridad.genruntimeconfig.cache
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/obj/Debug/net5.0/ref/Servicios.api.Seguridad.dll
-/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
