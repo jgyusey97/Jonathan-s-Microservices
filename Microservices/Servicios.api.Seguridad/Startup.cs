@@ -86,7 +86,13 @@ namespace Servicios.api.Seguridad
             
 
             });
-
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*"); //Cualquier cabecera, cualquier metodo, desde cualquier origen
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,11 +106,11 @@ namespace Servicios.api.Seguridad
            
 
             app.UseRouting();
-
+            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS
             app.UseAuthorization();
 
             app.UseAuthentication(); //Usar cuandos e desea saber el usuario que esta actualemnte en l; sesion por medio de un jwt token
-
+            
 
             app.UseEndpoints(endpoints =>
             {

@@ -35,3 +35,10 @@
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/obj/Debug/net5.0/Servicios.api.Gateway.genruntimeconfig.cache
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/obj/Debug/net5.0/ref/Servicios.api.Gateway.dll
 /Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/ocelot.json
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Gateway/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll

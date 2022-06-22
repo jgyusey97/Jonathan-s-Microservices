@@ -89,7 +89,7 @@ namespace Servicios.api.Libreria
 
             app.UseRouting();
 
-            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS
+            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS RECOMENDABLE
 
             app.UseAuthorization();
 

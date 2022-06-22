@@ -18,7 +18,7 @@
     "Servicios.api.Seguridad": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:9222;http://localhost:12209",
+      "applicationUrl": "https://localhost:9222;http://localhost:8877",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

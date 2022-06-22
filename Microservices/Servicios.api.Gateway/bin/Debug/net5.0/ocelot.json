@@ -2,17 +2,107 @@
 
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/LibreriaServicio/autorGenerico",
+      "DownstreamPathTemplate": "/api/LibreriaAutor",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5000" //Empoint del archivo libreria
+          "Port": "8876" //Empoint del archivo libreria
         }
       ],
 
-      "UpstreamPathTemplate": "/autorLista",
-      "UpstreamHttpMethod": ["POST", "GET", "UPDATE", "DELETE"]
+      "UpstreamPathTemplate": "/autor",
+      "UpstreamHttpMethod": [ "POST", "GET", ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/LibreriaAutor/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8876" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/autor/{id}",
+      "UpstreamHttpMethod": [ "GET", "UPDATE", "DELETE" ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/LibreriaAutor/pagination",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8876" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/autor/pagination",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Usuario", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8877" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/usuario",
+      "UpstreamHttpMethod": [ "GET" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Usuario/registrar", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8877" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/usuario/registrar",
+      "UpstreamHttpMethod": [ "POST" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Usuario/login", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8877" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/usuario/login",
+      "UpstreamHttpMethod": [ "POST" ]
+
     }
   ]
 
