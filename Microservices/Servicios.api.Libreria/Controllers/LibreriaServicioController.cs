@@ -42,6 +42,8 @@ namespace Servicios.api.Libreria.Controllers
             return Ok(autores);
         }
 
+
+
      
         [HttpGet("autorGenerico")]
         public async Task<ActionResult<IEnumerable<AutorEntity>>> GetAutorGenerico()
