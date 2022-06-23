@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl:"https://localhost:8875/"  //URL del api gateway
+  baseUrl:"http://localhost:8875/"  //URL del api gateway
 };
 
 /*

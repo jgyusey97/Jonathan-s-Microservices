@@ -12,7 +12,7 @@
       ],
 
       "UpstreamPathTemplate": "/autor",
-      "UpstreamHttpMethod": [ "POST", "GET", ],
+      "UpstreamHttpMethod": [ "POST", "GET" ],
       "AuthenticationOptions": {
 
 
@@ -103,7 +103,70 @@
       "UpstreamPathTemplate": "/usuario/login",
       "UpstreamHttpMethod": [ "POST" ]
 
+    },
+    {
+      "DownstreamPathTemplate": "/api/Libro", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8876" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/libro",
+      "UpstreamHttpMethod": [ "POST", "GET" ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Libro/{id}", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8876" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/libro/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Libro/pagination", //Metodo para que me retorna el usuario actual
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8876" //Empoint del archivo libreria
+        }
+      ],
+
+      "UpstreamPathTemplate": "/libro/pagination",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+
+
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+
+      }
     }
+
+
   ]
 
 }

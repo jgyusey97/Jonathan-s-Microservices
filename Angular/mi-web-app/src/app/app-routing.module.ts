@@ -18,10 +18,9 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
 
-  { path: 'books', component: BooksComponent },
+  { path: 'books', component: BooksComponent,canActivate: [SeguridadRouter]  },  //canActivate sirve para la authentication
 
-  { path: 'autores', component: AutoresComponent },
-
+  { path: 'autores', component: AutoresComponent , canActivate: [SeguridadRouter]  },
 ]; //Dentro de este arreglo de Rutas
 
 @NgModule({

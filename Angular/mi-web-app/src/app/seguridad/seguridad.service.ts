@@ -2,70 +2,120 @@ import { Subject } from 'rxjs';
 
 import { Usuario } from './usuario.model';
 import { LoginData } from './login-data.model';
-
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-//Este servicio es para el registro de los usuarios y el proceso del login
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class SeguridadService {
-  seguridadCambio = new Subject<boolean>(); //Este es la instancia del booleano
+  private token: string ;
+  baseUrl = environment.baseUrl;
 
-   private usuario: Usuario | undefined | null ;  //Cuando no queremos inciar una variable
+  seguridadCambio = new Subject<boolean>();
+  private usuario: Usuario | undefined|null;
 
-
-
-  constructor(private router: Router) {}
-  registrarUsuario(usr: Usuario) {
-    //Esta propiedad es para el registro del usuario
-    this.usuario = {
-      email: usr.email,
-      usuarioId: Math.round(Math.random() * 10000).toString(),
-      nombre: usr.nombre,
-      apellidos: usr.apellidos,
-      username: usr.username,
-      password: '',
-    };
-
-    this.seguridadCambio.next(true); //Notificar
-
-    this.router.navigate(['/']); //Redireccionando al componente de incio
+  obtenerToken(): string {
+    console.log('El token obtenido es ', this.token);
+    return this.token;
   }
 
-  //Este metodo sera utilizado para poder realizar el login
-  login(loginData: LoginData) {
-    this.usuario = {
-      email: loginData.email,
-      usuarioId: Math.round(Math.random() * 10000).toString(),
-      nombre: '',
-      apellidos: '',
-      username: '', //En blanco porque no marca
-      password: '',
-    };
+  cargarUsuario(): void {
+    const tokenBrowser = localStorage.getItem('token');
+    if (!tokenBrowser) {
+      return;
+    }
+
+    this.token = tokenBrowser;
     this.seguridadCambio.next(true);
 
-    this.router.navigate(['/']);
+    this.http.get<Usuario>(this.baseUrl + 'usuario').subscribe((response) => {
+      console.log('login respuesta', response);
+
+      this.token = response.token;
+      this.usuario = {
+
+        nombre: response.nombre,
+        apellido: response.apellido,
+        token: response.token,
+        password: '',
+        username: response.username,
+        email: response.email,
+        usuarioId: response.usuarioId,
+      };
+      this.seguridadCambio.next(true);
+      localStorage.setItem('token', response.token);
+    });
   }
 
-  //Metodo para cerrar la sesion
+  constructor(private router: Router, private http: HttpClient) {
 
+    this.token="";
+  }
+
+  registrarUsuario(usr: Usuario): void {
+    this.http
+      .post<Usuario>(this.baseUrl + 'usuario/registrar', usr)
+      .subscribe((response) => {
+        this.token = response.token;
+        this.usuario = {
+          email: response.email,
+          nombre: response.nombre,
+          apellido: response.apellido,
+          token: response.token,
+          password: response.password,
+          username: response.username,
+          usuarioId: response.usuarioId,
+        };
+        this.seguridadCambio.next(true);
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/']);
+      });
+
+
+  }
+
+  login(loginData: LoginData): void {
+    this.http
+      .post<Usuario>(this.baseUrl + 'usuario/login', loginData)
+      .subscribe((response) => {
+        console.log('login respuesta', response);
+
+        this.token = response.token;
+        this.usuario = {
+          email: response.email,
+          nombre: response.nombre,
+          apellido: response.apellido,
+          token: response.token,
+          password: '',
+          username: response.username,
+          usuarioId: response.usuarioId,
+        };
+
+        console.log('El token es ', this.token);
+        this.seguridadCambio.next(true);
+        localStorage.setItem('token', response.token);  //Local Storage me permite almacenar un valor
+        this.router.navigate(['/']);
+      });
+  }
+  NavigatoPage(route:string){
+
+    this.router.navigate([route]);
+  }
   salirSesion() {
     this.usuario = null;
-
     this.seguridadCambio.next(false);
-
-    this.router.navigate(['/login']); //Que me redireccione al componente Login
+    localStorage.removeItem('token');  //Removemos del local storage el item que se desea eliminar
+    this.router.navigate(['/login']);
   }
 
-  obtenerUsuario (){
-
-    return { ...this.usuario}
+  obtenerUsuario() {
+    return { ...this.usuario };
   }
 
-  onSesion(){
-
-    return this.usuario!=null;
-
+  onSesion() {
+    return this.token != null;  //Va estar en sesion si el token no esta en nulo
   }
-
 }

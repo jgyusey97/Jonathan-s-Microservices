@@ -15,22 +15,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { RegistrarComponent } from './seguridad/registrar/registrar.component';
 import { LoginComponent } from './seguridad/login/login.component';
-import { FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BarraComponent } from './navegacion/barra/barra.component';
 import { MenuListaComponent } from './navegacion/menu-lista/menu-lista.component';
 import { SeguridadService } from './seguridad/seguridad.service';
-import { BooksComponent } from './books/books.component';  //Servicio de seguridad
+import { BooksComponent } from './books/books.component'; //Servicio de seguridad
 import { BooksService } from './books/books.service';
 import { BookNuevoComponent } from './books/book-nuevo.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { AutoresComponent } from './autores/autores.component';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SeguridadInterceptor } from './seguridad/seguridad-interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent,  //Lo agregamos en la seccion de declarencios
+    UsuarioComponent, //Lo agregamos en la seccion de declarencios
     LibrosComponent,
     LibroComponent,
     InicioComponent,
@@ -38,20 +38,27 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     BarraComponent,
     MenuListaComponent,
-    BooksComponent , //Menu principal
-    BookNuevoComponent, AutoresComponent
+    BooksComponent, //Menu principal
+    BookNuevoComponent,
+    AutoresComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,  //Archivo que contiene las rutas
+    AppRoutingModule, //Archivo que contiene las rutas
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [LibrosService, SeguridadService, {provide: MAT_DATE_LOCALE, useValue:'es-ES'}],  //En la seccion de providers agregamos los servicios
+  providers: [
+
+    { provide: HTTP_INTERCEPTORS, useClass: SeguridadInterceptor, multi: true },
+
+    LibrosService,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  ], //En la seccion de providers agregamos los servicios
   bootstrap: [AppComponent],
-  entryComponents:[BookNuevoComponent]
+  entryComponents: [BookNuevoComponent],
 })
-export class AppModule { }
+export class AppModule {}

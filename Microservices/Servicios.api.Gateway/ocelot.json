@@ -12,7 +12,7 @@
       ],
 
       "UpstreamPathTemplate": "/autor",
-      "UpstreamHttpMethod": [ "POST", "GET", ],
+      "UpstreamHttpMethod": [ "POST", "GET" ],
       "AuthenticationOptions": {
 
 

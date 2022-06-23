@@ -36,7 +36,7 @@ private autoresSubject  = new Subject <Autor[]>();
    obtenerAutores(){
 
       //return this.autoresLista.slice();
-      this.http.get<Autor[]>(this.baseUrl+'api/LibreriaAutor')
+      this.http.get<Autor[]>(this.baseUrl+'autor')
       .subscribe((data) =>{
         this.autoresLista = data;
         this.autoresSubject.next([...this.autoresLista]);

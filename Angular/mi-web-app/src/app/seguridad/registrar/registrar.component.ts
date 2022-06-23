@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -19,13 +20,14 @@ export class RegistrarComponent implements OnInit {
   registrarUsuario(form:NgForm){
 
     this.seguridadService.registrarUsuario({
-     email: form.value.email, 
+     email: form.value.email,
      password: form.value.password,
-     apellidos : form.value.apellidos, 
-     nombre : form.value.nombre, 
-     username : form.value.username, 
-     usuarioId : ""
-     
+     apellido : form.value.apellidos,
+     nombre : form.value.nombre,
+     username : form.value.username,
+     usuarioId : "",
+     token:""
+
 
     });
 

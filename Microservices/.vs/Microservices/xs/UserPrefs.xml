@@ -1,34 +1,39 @@
-﻿<Properties StartupConfiguration="{0AE4E833-4EB3-4888-BFB8-594CD72655D6}|Default">
+﻿<Properties StartupConfiguration="Varios proyectos">
   <MonoDevelop.Ide.ItemProperties.Servicios.api.Seguridad PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Servicios.api.Gateway FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Servicios.api.Gateway PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="28" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="33" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" relfile="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" line="30" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" relfile="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" line="24" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="18" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" line="17" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" line="13" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="17" column="9" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/Login.cs" relfile="Servicios.api.Seguridad/Core/Application/Login.cs" line="78" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/Login.cs" relfile="Servicios.api.Seguridad/Core/Application/Login.cs" line="76" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="27" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="28" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Controllers/UsuarioController.cs" relfile="Servicios.api.Seguridad/Controllers/UsuarioController.cs" line="60" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="45" column="13" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="47" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Startup.cs" relfile="Servicios.api.Seguridad/Startup.cs" line="75" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="35" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="14" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="54" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="59" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="62" column="1" />
-    <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="49" column="1" />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Libreria/Repository/AutorRepository.cs" relfile="Servicios.api.Libreria/Repository/AutorRepository.cs" line="33" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" line="17" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs" line="13" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="17" column="9" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/Login.cs" relfile="Servicios.api.Seguridad/Core/Application/Login.cs" line="78" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/Login.cs" relfile="Servicios.api.Seguridad/Core/Application/Login.cs" line="76" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="27" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="28" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Controllers/UsuarioController.cs" relfile="Servicios.api.Seguridad/Controllers/UsuarioController.cs" line="60" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="45" column="13" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="47" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="35" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" relfile="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" line="14" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="54" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="59" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="62" column="1" />
+      <Breakpoint file="/Users/jonathanguzman/Documents/GitHub/Jonathan-s-Microservices/Microservices/Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" relfile="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" line="49" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Servicios.api.Libreria PreferredExecutionTarget="/Applications/Firefox.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Servicios.api.Seguridad/Core/JwtLogic/JwtGenerator.cs">
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Varios proyectos" Name="Varios proyectos">
+      <Items>
+        <StartupItem ItemId="{50427D2C-5B32-44C4-BCF1-6D054992FBC2}" ItemName="Servicios.api.Gateway" ConfigurationId="Default" />
+        <StartupItem ItemId="{956666E7-40B5-4605-8DF1-905C6132FC18}" ItemName="Servicios.api.Libreria" ConfigurationId="Default" />
+        <StartupItem ItemId="{0AE4E833-4EB3-4888-BFB8-594CD72655D6}" ItemName="Servicios.api.Seguridad" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Servicios.api.Seguridad/Startup.cs">
     <Files>
       <File FileName="Servicios.api.Seguridad/Controllers/UsuarioController.cs" Line="60" Column="1" />
       <File FileName="Servicios.api.Seguridad/Controllers/HomeController.cs" Line="1" Column="1" />
@@ -39,7 +44,7 @@
       <File FileName="Servicios.api.Seguridad/Core/JwtLogic/UsuarioSesion.cs" Line="17" Column="1" />
       <File FileName="Servicios.api.Seguridad/Migrations/SeguridadContextoModelSnapshot.cs" Line="210" Column="41" />
       <File FileName="Servicios.api.Seguridad/Core/JwtLogic/IUsuarioSesion.cs" Line="6" Column="10" />
-      <File FileName="Servicios.api.Seguridad/Startup.cs" Line="75" Column="8" />
+      <File FileName="Servicios.api.Seguridad/Startup.cs" Line="109" Column="77" />
       <File FileName="Servicios.api.Seguridad/appsettings.json" Line="4" Column="103" />
       <File FileName="Servicios.api.Seguridad/Core/DTO/MappingProfile.cs" Line="17" Column="1" />
       <File FileName="Servicios.api.Seguridad/Core/Entities/Usuario.cs" Line="18" Column="1" />
@@ -47,19 +52,41 @@
       <File FileName="Servicios.api.Seguridad/Core/Application/UsuarioActual.cs" Line="54" Column="1" />
       <File FileName="Servicios.api.Seguridad/Core/Application/Register.cs" Line="105" Column="18" />
       <File FileName="Servicios.api.Seguridad/Migrations/20220615035643_MigracionSeguridadInicial.cs" Line="1" Column="1" />
-      <File FileName="Servicios.api.Seguridad/Program.cs" Line="55" Column="1" />
+      <File FileName="Servicios.api.Seguridad/Program.cs" Line="52" Column="1" />
+      <File FileName="Servicios.api.Gateway/Startup.cs" Line="61" Column="16" />
+      <File FileName="Servicios.api.Gateway/ocelot.json" Line="118" Column="47" />
+      <File FileName="Servicios.api.Gateway/appsettings.json" Line="1" Column="2" />
+      <File FileName="Servicios.api.Gateway/Properties/launchSettings.json" Line="24" Column="47" />
+      <File FileName="Servicios.api.Seguridad/Properties/launchSettings.json" Line="21" Column="70" />
+      <File FileName="Servicios.api.Libreria/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="Servicios.api.Gateway/Controllers/WeatherForecastController.cs" Line="15" Column="10" />
+      <File FileName="Servicios.api.Libreria/Controllers/LibreriaServicioController.cs" Line="30" Column="1" />
+      <File FileName="Servicios.api.Libreria/Controllers/LiberiaAutorController.cs" Line="49" Column="53" />
+      <File FileName="Servicios.api.Libreria/Controllers/LibroController.cs" Line="27" Column="19" />
+      <File FileName="Servicios.api.Gateway/Program.cs" Line="16" Column="1" />
+      <File FileName="Servicios.api.Libreria/Startup.cs" Line="92" Column="90" />
+      <File FileName="Servicios.api.Libreria/Core/MongoSettings.cs" Line="1" Column="1" />
+      <File FileName="Servicios.api.Libreria/Core/ContextMongoDB/AutorContext.cs" Line="24" Column="1" />
+      <File FileName="Servicios.api.Libreria/Repository/AutorRepository.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Microservices" expanded="True">
-            <Node name="Servicios.api.Libreria" expanded="True">
+            <Node name="Servicios.api.Gateway" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Core" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="Servicios.api.Libreria" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Core" expanded="True">
+                <Node name="ContextMongoDB" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
               <Node name="Repository" expanded="True" />
             </Node>
             <Node name="Servicios.api.Seguridad" expanded="True">
@@ -70,12 +97,11 @@
               <Node name="Core" expanded="True">
                 <Node name="Application" expanded="True" />
                 <Node name="Entities" expanded="True" />
-                <Node name="JwtLogic" expanded="True">
-                  <Node name="JwtGenerator.cs" selected="True" />
-                </Node>
+                <Node name="JwtLogic" expanded="True" />
                 <Node name="Persistence" expanded="True" />
               </Node>
               <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
             </Node>
           </Node>
         </State>

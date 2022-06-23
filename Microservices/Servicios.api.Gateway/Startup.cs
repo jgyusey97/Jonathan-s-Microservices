@@ -73,10 +73,11 @@ namespace Servicios.api.Gateway
             }
 
             app.UseRouting();
+            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS
             app.UseAuthentication(); //Para realizar la autenticacion
 
             app.UseAuthorization();
-            app.UseCors("CorsRule");  //Agregamos la nueva regla en los CORS
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

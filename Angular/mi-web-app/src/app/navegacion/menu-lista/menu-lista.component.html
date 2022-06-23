@@ -11,7 +11,22 @@
     <mat-icon>login</mat-icon>
     <span class="navegacion-list-label">Ingresar</span>
   </a>
+  <mat-list-item>
+    <button mat-icon-button (click)="navigatetoLibros()" *ngIf="estadoUsuario">
 
+      <mat-icon>book</mat-icon>
+
+      <span class="navegacion-list-label">Libros</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button (click)="navigatetoAutores()" *ngIf="estadoUsuario">
+
+      <mat-icon>groups</mat-icon>
+
+      <span class="navegacion-list-label">Autores</span>
+    </button>
+  </mat-list-item>
   <mat-list-item>
     <button mat-icon-button (click)="terminarSesionMenu()" *ngIf="estadoUsuario">
 
@@ -20,5 +35,10 @@
       <span class="navegacion-list-label">Salir</span>
     </button>
   </mat-list-item>
+
+
+
+
+
 
 </mat-nav-list>

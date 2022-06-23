@@ -91,7 +91,7 @@ export class BooksComponent implements OnInit, OnDestroy, AfterViewInit {
       this.sortDirection,
       this.filterValue
     );
-    this.booksService
+   this.bookSubscription= this.booksService
       .obtenerActualListener()
       .subscribe((pagination: PaginationBook) => {
         this.dataSource = new MatTableDataSource<Books>(pagination.data);

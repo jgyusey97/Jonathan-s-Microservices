@@ -31,7 +31,7 @@ constructor (private http:HttpClient){
 }
 
 //Se volvio un metodo de tipo void
-obtenerLibros(libroPorPagina:number, paginaActual:number, sort: string, sortDireccion:string, filterValue:any){
+obtenerLibros(libroPorPagina:number, paginaActual:number, sort: string, sortDireccion:string, filterValue:any):void{
 
   const request ={
   pageSize:libroPorPagina,
@@ -42,7 +42,7 @@ obtenerLibros(libroPorPagina:number, paginaActual:number, sort: string, sortDire
 
   };
 
-  this.http.post<PaginationBook>(this.baseUrl+ 'api/Libro/Pagination', request)
+  this.http.post<PaginationBook>(this.baseUrl+ 'libro/pagination', request)
   .subscribe((response)=>{
     this.bookPagination = response;
    this.bookPaginationSubject.next(this.bookPagination);
@@ -54,7 +54,7 @@ obtenerLibros(libroPorPagina:number, paginaActual:number, sort: string, sortDire
 
 
 //Metodo que devuelve la data de los libros
-obtenerActualListener(){
+obtenerActualListener():any{
 
   return this.bookPaginationSubject.asObservable();
 
@@ -63,10 +63,10 @@ obtenerActualListener(){
 
 
 //Vamos a guardar el libro por http
-guardarLibro(book: any){
+guardarLibro(book: any):any{
 
 
-  this.http.post(this.baseUrl+'api/Libro', book)
+  this.http.post(this.baseUrl+'libro', book)
   .subscribe((response)=>{
     this.booksSubject.next(null);
   });
@@ -76,7 +76,7 @@ guardarLibro(book: any){
 
 }
 
-guardarLibroListener(){
+guardarLibroListener():any{
 
   return this.booksSubject.asObservable(); //Retorna
 

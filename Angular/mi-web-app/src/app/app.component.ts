@@ -1,6 +1,7 @@
 //Las librerias que importamos en angular
-import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { Component , OnInit} from '@angular/core';
+
+import { SeguridadService } from './seguridad/seguridad.service';
 
 
 
@@ -13,4 +14,11 @@ import {MatCardModule} from '@angular/material/card';
 })
 export class AppComponent {
    abrirMenu = false;
+   constructor(private seguridadService:SeguridadService){
+
+   }
+
+   ngOnInit(){
+     this.seguridadService.cargarUsuario()  //Se busca dentro de almacenamiento buscara para iniciar la sesion
+   }
 }
