@@ -3,5 +3,7 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\MisProyectos\Jonathan-s-Microservices\Microservices\Servicios.api.Libreria\Properties\PublishProfiles\registry.hub.docker.com_454874477.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

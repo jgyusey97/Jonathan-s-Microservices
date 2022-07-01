@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Libreria", "Servicios.api.Libreria\Servicios.api.Libreria.csproj", "{956666E7-40B5-4605-8DF1-905C6132FC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Libreria", "Servicios.api.Libreria\Servicios.api.Libreria.csproj", "{956666E7-40B5-4605-8DF1-905C6132FC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Seguridad", "Servicios.api.Seguridad\Servicios.api.Seguridad.csproj", "{0AE4E833-4EB3-4888-BFB8-594CD72655D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Seguridad", "Servicios.api.Seguridad\Servicios.api.Seguridad.csproj", "{0AE4E833-4EB3-4888-BFB8-594CD72655D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Gateway", "Servicios.api.Gateway\Servicios.api.Gateway.csproj", "{50427D2C-5B32-44C4-BCF1-6D054992FBC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Gateway", "Servicios.api.Gateway\Servicios.api.Gateway.csproj", "{50427D2C-5B32-44C4-BCF1-6D054992FBC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kubernets", "kubernets", "{172E2D2D-C718-4B58-86A7-DEBAB09F45A0}"
+	ProjectSection(SolutionItems) = preProject
+		microservice-libreria-pod.yml = microservice-libreria-pod.yml
+		microservice-seguridad-pod.yml = microservice-seguridad-pod.yml
+		mongo-pod.yml = mongo-pod.yml
+		sqlserver-pod.yml = sqlserver-pod.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
