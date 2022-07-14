@@ -1,0 +1,25 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-libreria-deploy
+  labels:
+    name: microservice-libreria-deploy
+    app : microservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microservice-libreria
+      type: microservice
+  template:
+    metadata:
+      name: microservice-libreria-pod
+      labels: 
+        app: microservice-libreria
+        type: microservice
+    spec:
+      containers:
+      - name: microservice-libreria-app
+        image: 454874477/serviciosapilibreria:latest
+        ports:
+          - containerPort: 80
